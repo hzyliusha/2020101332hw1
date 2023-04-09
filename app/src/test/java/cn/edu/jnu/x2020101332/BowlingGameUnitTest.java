@@ -30,6 +30,10 @@ public class BowlingGameUnitTest {
         assertEquals(20, game.score());
     }
 
+    @Test
+    public void testOneSpare() {
+    }
+
     private void repeatedRoll(int pin, int times) {
         for(int j=0;j<times;j++)
         {
