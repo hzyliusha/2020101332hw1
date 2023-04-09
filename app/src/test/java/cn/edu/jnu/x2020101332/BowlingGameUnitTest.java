@@ -45,10 +45,14 @@ public class BowlingGameUnitTest {
         repeatedRoll(0,16);
         assertEquals(18,game.score());
     }
+    @Test
+    public void testPerfectGame() {
+    }
 
     private void rollOneStrick() {
         game.roll(10);
     }
+
 
     private void rollSpare() {
         game.roll(2);
