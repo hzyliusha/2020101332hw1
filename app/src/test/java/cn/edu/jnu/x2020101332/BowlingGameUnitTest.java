@@ -37,6 +37,9 @@ public class BowlingGameUnitTest {
         repeatedRoll(0,17);
         assertEquals(16, game.score());
     }
+    @Test
+    public void testOneSrick() {
+    }
 
     private void rollSpare() {
         game.roll(2);
