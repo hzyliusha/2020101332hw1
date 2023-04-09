@@ -47,6 +47,8 @@ public class BowlingGameUnitTest {
     }
     @Test
     public void testPerfectGame() {
+        repeatedRoll(10, 12);
+        assertEquals(300, game.score());
     }
 
     private void rollOneStrick() {
