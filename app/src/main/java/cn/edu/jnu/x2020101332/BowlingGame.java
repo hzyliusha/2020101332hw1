@@ -9,18 +9,32 @@ public class BowlingGame {
 
     public int score() {
         int score =0;
-        for(int j=0;j<rolls.length;j++)
-        {
-            score+=rolls[j];
-            if ((j%2==0)&&((j<19))&& isaSpare(j))
+        int currentFrameScoreIndex=0;
+        for(int currentFrame=0;currentFrame<10;currentFrame++)
+        {   score+=rolls[currentFrameScoreIndex];
+            score+=rolls[currentFrameScoreIndex+1];
+            if(isaStrick(currentFrameScoreIndex))
             {
-                score+=rolls[j+2];
+                score+=rolls[currentFrameScoreIndex+2];
             }
+            else if(isaSpare(currentFrameScoreIndex))
+            {
+                score+=rolls[currentFrameScoreIndex+2];
+                currentFrameScoreIndex++;
+            }
+            else
+            {
+                currentFrameScoreIndex++;
+            }
+            currentFrameScoreIndex++;
         }
         return score;
     }
 
     private boolean isaSpare(int j) {
         return rolls[j] + rolls[j + 1] == 10;
+    }
+    private boolean isaStrick(int j) {
+        return rolls[j]  == 10;
     }
 }

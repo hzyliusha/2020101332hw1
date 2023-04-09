@@ -26,8 +26,8 @@ public class BowlingGameUnitTest {
     }
     @Test
     public void testAllOnes() {
-        repeatedRoll(1,20);
-        assertEquals(20, game.score());
+        repeatedRoll(0,20);
+        assertEquals(0, game.score());
     }
 
     @Test
@@ -39,6 +39,15 @@ public class BowlingGameUnitTest {
     }
     @Test
     public void testOneSrick() {
+        rollOneStrick();
+        game.roll(2);
+        game.roll(2);
+        repeatedRoll(0,16);
+        assertEquals(18,game.score());
+    }
+
+    private void rollOneStrick() {
+        game.roll(10);
     }
 
     private void rollSpare() {
