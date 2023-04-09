@@ -32,6 +32,15 @@ public class BowlingGameUnitTest {
 
     @Test
     public void testOneSpare() {
+        rollSpare();
+        game.roll(3);
+        repeatedRoll(0,17);
+        assertEquals(16, game.score());
+    }
+
+    private void rollSpare() {
+        game.roll(2);
+        game.roll(8);
     }
 
     private void repeatedRoll(int pin, int times) {
